@@ -35,7 +35,7 @@ public class GameWorld : MonoBehaviour
                 for (int x = 0; x < 9; x++)
                 {
                     //Instantiate(dirtFloor, new Vector3(x, 0, y), transform.rotation);
-                    if (map.getTileType(y, z, x) == 1)
+                    if (map.getTileType(y, z, x) > 0)
                     {
                         if (z % 2 == 0)
                         {
