@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PlayerInput : MonoBehaviour {
     public enum RotationAxes { MouseXAndY = 0, MouseX = 1, MouseY = 2 }
-    public RotationAxes axes = RotationAxes.MouseX;
+    public RotationAxes axes = RotationAxes.MouseXAndY;
     public float sensitivityX = 15F;
     public float sensitivityY = 15F;
     public float minimumX = -360F;
@@ -22,6 +22,11 @@ public class PlayerInput : MonoBehaviour {
 
     public bool interactionPressed = false;
     public bool mouseClicked = false;
+
+    public Camera camera;
+
+    public bool freezeMovement = false;
+    public bool freezeLook = false;
 
     public enum inputTypes
     {
@@ -60,59 +65,65 @@ public class PlayerInput : MonoBehaviour {
     public void handleKeyboardInput()
     {
         //-----------MOUSE--------------
-        if (axes == RotationAxes.MouseXAndY)
+        if (!freezeLook)
         {
-            float rotationX = transform.localEulerAngles.y + Input.GetAxis("Mouse X") * sensitivityX;
+            if (axes == RotationAxes.MouseXAndY)
+            {
+                float rotationX = transform.localEulerAngles.y + Input.GetAxis("Mouse X") * sensitivityX;
 
-            rotationY += Input.GetAxis("Mouse Y") * sensitivityY;
-            rotationY = Mathf.Clamp(rotationY, minimumY, maximumY);
+                rotationY += Input.GetAxis("Mouse Y") * sensitivityY;
+                rotationY = Mathf.Clamp(rotationY, minimumY, maximumY);
 
-            transform.localEulerAngles = new Vector3(-rotationY, rotationX, 0);
+                camera.transform.localEulerAngles = new Vector3(-rotationY, 0, 0);
+                transform.Rotate(0, Input.GetAxis("Mouse X") * sensitivityX, 0);
+            }
+            else if (axes == RotationAxes.MouseX)
+            {
+                transform.Rotate(0, Input.GetAxis("Mouse X") * sensitivityX, 0);
+            }
+            else
+            {
+                rotationY += Input.GetAxis("Mouse Y") * sensitivityY;
+                rotationY = Mathf.Clamp(rotationY, minimumY, maximumY);
+
+                transform.localEulerAngles = new Vector3(-rotationY, transform.localEulerAngles.y, 0);
+            }
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                Debug.Log("Pressed primary button.");
+            }
         }
-        else if (axes == RotationAxes.MouseX)
-        {
-            transform.Rotate(0, Input.GetAxis("Mouse X") * sensitivityX, 0);
-        }
-        else
-        {
-            rotationY += Input.GetAxis("Mouse Y") * sensitivityY;
-            rotationY = Mathf.Clamp(rotationY, minimumY, maximumY);
-
-            transform.localEulerAngles = new Vector3(-rotationY, transform.localEulerAngles.y, 0);
-        }
-
-        if (Input.GetMouseButtonDown(0))
-        {
-            Debug.Log("Pressed primary button.");
-        }
-
 
         //----------KEYBOARD-------------
-        Vector3 pos = playerTransform.position;
-
-        if (Input.GetKey("w"))
+        if (!freezeMovement)
         {
-            pos = applyMovementInDirection(direction.forward, pos);
-        }
-        if (Input.GetKey("s"))
-        {
-            pos = applyMovementInDirection(direction.backward, pos);
-        }
-        if (Input.GetKey("d"))
-        {
-            pos = applyMovementInDirection(direction.right, pos);
-        }
-        if (Input.GetKey("a"))
-        {
-            pos = applyMovementInDirection(direction.left, pos);
-        }
+            Vector3 pos = playerTransform.position;
 
-        if (Input.GetKey("e")) {//interaction button
-            interactionPressed = true;
-        }
+            if (Input.GetKey("w"))
+            {
+                pos = applyMovementInDirection(direction.forward, pos);
+            }
+            if (Input.GetKey("s"))
+            {
+                pos = applyMovementInDirection(direction.backward, pos);
+            }
+            if (Input.GetKey("d"))
+            {
+                pos = applyMovementInDirection(direction.right, pos);
+            }
+            if (Input.GetKey("a"))
+            {
+                pos = applyMovementInDirection(direction.left, pos);
+            }
 
-
+            if (Input.GetKey("e"))
+            {//interaction button
+                interactionPressed = true;
+            }
             playerTransform.position = pos;
+        }
+
     }
 
     //applies a movement based on the mouse look direction, modified by the direction passed. (to allow strafing with 'wasd')

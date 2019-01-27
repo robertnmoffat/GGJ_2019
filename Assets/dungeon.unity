@@ -1070,7 +1070,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f2d02e44702bcd45a4d275484536e8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axes: 1
+  axes: 0
   sensitivityX: 15
   sensitivityY: 15
   minimumX: -360
@@ -1082,6 +1082,9 @@ MonoBehaviour:
   playerTransform: {fileID: 0}
   interactionPressed: 0
   mouseClicked: 0
+  camera: {fileID: 625911750}
+  freezeMovement: 0
+  freezeLook: 0
   currentInput: 0
 --- !u!1 &1972374344 stripped
 GameObject:
@@ -1276,6 +1279,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stoneWall: {fileID: 1263345717494844, guid: 85e1572541d7a5743ac2da55e9e8bffc, type: 2}
   stoneDoor: {fileID: 0}
+  barredWall: {fileID: 1949716415693580, guid: deb3f6e19385ee64d94a44327f9a0e0d, type: 2}
   dirtFloor: {fileID: 1134158998226746, guid: 4eeef27037d7ba2458c49e1f1ed6622d, type: 2}
   swampFloor: {fileID: 1000011970176368, guid: abfefe2cd707f0d4b909ea0355187602, type: 2}
   stairs: {fileID: 1508681430066680, guid: ff7a88c73985e7a46802b6871b26c99c, type: 2}
