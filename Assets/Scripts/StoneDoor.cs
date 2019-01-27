@@ -12,12 +12,13 @@ public class StoneDoor : MonoBehaviour {
     void Start()
     {
         animator = GetComponent<Animator>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey("e"))
+        if (Input.GetKeyUp("e"))
         {
             if (!animator.GetBool("isOpen"))
             {
@@ -41,6 +42,7 @@ public void open()
 {
     animator.SetTrigger("onInteract");
     animator.SetBool("isOpen", true);
+        accessModulate();
 
 }
 
@@ -48,22 +50,23 @@ public void close()
 {
     animator.SetTrigger("onInteract");
     animator.SetBool("isOpen", false);
+        accessModulate();
 
 }
 
 public void accessModulate()
 {
-    if (front.enabled == false)
+    if (front.enabled)
     {
-        front.enabled = true;
-        back.enabled = true;
+        front.enabled = false;
+            back.enabled = false;
     }
     else
     {
-        if (front.enabled == true)
+        if (!front.enabled)
         {
-            front.enabled = false;
-            back.enabled = false;
+            front.enabled = true;
+            back.enabled = true;
         }
     }
 }
