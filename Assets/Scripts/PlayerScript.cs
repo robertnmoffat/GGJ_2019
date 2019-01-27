@@ -16,6 +16,13 @@ public class PlayerScript : MonoBehaviour {
     private int maxSanity;
     private int currentSanity;
 
+    public Item heldItem=null;
+    public bool itemHeldChanged = false;
+    public bool interactionPressed = false;
+    public bool mouseClicked = false;
+
+    public int blockx, blockz, blocky;
+
 
     // Use this for initialization
     void Start () {
@@ -27,6 +34,19 @@ public class PlayerScript : MonoBehaviour {
 	void Update () {
         playerInput.handlePlayerMovement();
         direction = transform.eulerAngles;
+
+        blockx = (int)(transform.position.x+0.5f);
+        blockz = (int)(transform.position.z+0.5f);
+        blocky = (int)transform.position.y;
+
+        if (playerInput.isInteractionPressed()) {
+            interactionPressed = true;
+            playerInput.resetInteractionPressed();
+        }
+        if (playerInput.isMouseClicked()) {
+            mouseClicked = true;
+            playerInput.resetMouseClicked();
+        }
     }
 
 
@@ -89,5 +109,32 @@ public class PlayerScript : MonoBehaviour {
         }
     }
 
+    public void setHeldItem(Item newItem) {
+        heldItem = newItem;
+        itemHeldChanged = true;
+    }
+
+    public bool isItemHeldChanged() {
+        return itemHeldChanged;
+    }
+
+    public void resetItemHeldChanged() {
+        itemHeldChanged = false;
+    }
+
+    public Item getHeldItem() {
+        return heldItem;
+    }
+
+
+    public bool isInteractionPressed()
+    {
+        return interactionPressed;
+    }
+
+    public void resetInteractionPressed()
+    {
+        interactionPressed = false;
+    }
 
 }

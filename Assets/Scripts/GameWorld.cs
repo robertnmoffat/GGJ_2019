@@ -13,6 +13,8 @@ public class GameWorld : MonoBehaviour
     public GameObject stairs;
     public Map map;
 
+    public GameObject dungeonEntityPrefab;
+
     // Use this for initialization
     void Start()
     {
@@ -44,6 +46,12 @@ public class GameWorld : MonoBehaviour
             {
                 for (int x = 0; x < map.getXLength(); x++)
                 {
+                    Interactible curInteractible;
+                    if ((curInteractible = map.GetInteractible(y, z / 2, x / 2)) != null&&curInteractible.gameObjectScript==null)
+                    {
+                        instantiateInteractible(curInteractible, y, z, x);
+                    }
+
                     //Instantiate(dirtFloor, new Vector3(x, 0, y), transform.rotation);
                     if ((currentTileNumber = map.getTileType(y, z, x)) > 0)
                     {
@@ -72,13 +80,33 @@ public class GameWorld : MonoBehaviour
                                 //GameObject floor = (GameObject)Instantiate(swampFloor, new Vector3(x / 2, y, -z / 2), Quaternion.Euler(90, 0, 0));
                                 //Instantiate(dirtFloor, new Vector3(x / 2, y, -z / 2), Quaternion.Euler(-90, 0, 0));
                                 instantiateFloor(currentTileNumber, y, z, x);
+
+                                
                             }
                         }
-
                     }
                 }
-
             }
+        }
+    }
+
+    public Interactible instantiateInteractible(Interactible interactible, int y, int z, int x) {
+        if (interactible is Item)
+        {
+            //Interactible is of the item class
+            Item curItem = (Item)interactible;
+            GameObject itemObject = Instantiate(dungeonEntityPrefab, new Vector3(x / 2, y + 0.5f, (-z / 2) - 1), Quaternion.Euler(0, 0, 0));
+            DungeonEntity newDungeonEntity = itemObject.GetComponent<DungeonEntity>();
+            curItem.gameObjectScript = newDungeonEntity;
+            curItem.initGameObject();
+                   
+            
+            return curItem;
+        }
+        else {
+            //Interactible is just an interactible (lever or door, etc)
+
+            return null;
         }
     }
 
