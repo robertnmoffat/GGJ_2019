@@ -3,7 +3,11 @@ using System.Collections;
 
 public class GameWorld : MonoBehaviour
 {
+    public enum WallOrientation { front, side };
+
     public GameObject stoneWall;
+    public GameObject stoneDoor;
+
     public GameObject dirtFloor;
     public GameObject swampFloor;
     public GameObject stairs;
@@ -46,7 +50,9 @@ public class GameWorld : MonoBehaviour
                         if (z % 2 == 0)
                         {
                             //only walls
-                            Instantiate(stoneWall, new Vector3(x / 2, y + 0.5f, (-z / 2) + 0.5f), Quaternion.Euler(0, 0, 0));
+
+                            instantiateWall(currentTileNumber, y,z,x, WallOrientation.front);
+                            //Instantiate(stoneWall, new Vector3(x / 2, y + 0.5f, (-z / 2) + 0.5f), Quaternion.Euler(0, 0, 0));
                             //Instantiate(stoneWall, new Vector3(x / 2, y + 0.5f, (-z / 2) + 0.5f), Quaternion.Euler(0, 180, 0));
                         }
                         else
@@ -55,7 +61,9 @@ public class GameWorld : MonoBehaviour
                             if (x % 2 == 0)
                             {
                                 //walls
-                                Instantiate(stoneWall, new Vector3((x / 2) - 0.5f, y + 0.5f, -z / 2), Quaternion.Euler(0, 90, 0));
+
+                                instantiateWall(currentTileNumber, y, z, x, WallOrientation.side);
+                                //Instantiate(stoneWall, new Vector3((x / 2) - 0.5f, y + 0.5f, -z / 2), Quaternion.Euler(0, 90, 0));
                                 //Instantiate(stoneWall, new Vector3((x / 2) - 0.5f, y + 0.5f, -z / 2), Quaternion.Euler(0, -90, 0));
                             }
                             else
@@ -74,6 +82,18 @@ public class GameWorld : MonoBehaviour
         }
     }
 
+    public void instantiateWall(int tileNumber, int y, int z, int x, WallOrientation wallOrientation) {
+        GameObject wallObject = getWallTypeByInt(tileNumber);
+        GameObject wall;
+        if (wallObject != null)
+        {
+            if(wallOrientation==WallOrientation.front)
+                wall = Instantiate(wallObject, new Vector3(x / 2, y + 0.5f, (-z / 2) + 0.5f), Quaternion.Euler(0, 0, 0));
+            else
+                wall = Instantiate(wallObject, new Vector3((x / 2) - 0.5f, y + 0.5f, -z / 2), Quaternion.Euler(0, 90, 0));
+        }
+    }
+
     public void instantiateFloor(int tileNumber, int y, int z, int x) {
         GameObject floorObject = getFloorTypeByInt(tileNumber);
         GameObject floor;//if we want to utilize the floors later
@@ -81,7 +101,7 @@ public class GameWorld : MonoBehaviour
             floor = (GameObject)Instantiate(floorObject, new Vector3(x / 2, y, -z / 2), Quaternion.Euler(0, 180, 0));
     }
 
-    //returns object matching enum of map integer
+    //returns object matching enum of floor map integer
     public GameObject getFloorTypeByInt(int tileInt) {
         Map.Floors floorType = (Map.Floors)tileInt;//casting to Floor enum
         switch (floorType) {
@@ -95,6 +115,18 @@ public class GameWorld : MonoBehaviour
                 return stairs;
         }
 
+        return null;
+    }
+
+    //returns object matching enum of wall map integer
+    public GameObject getWallTypeByInt(int tileInt) {
+        Map.Walls wallType = (Map.Walls)tileInt;
+        switch (wallType) {
+            case Map.Walls.stoneBlock:
+                return stoneWall;
+            case Map.Walls.stoneDoor:
+                return stoneDoor;
+        }
         return null;
     }
 
