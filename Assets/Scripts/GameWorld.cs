@@ -7,6 +7,7 @@ public class GameWorld : MonoBehaviour
 
     public GameObject stoneWall;
     public GameObject stoneDoor;
+    public GameObject barredWall;
 
     public GameObject dirtFloor;
     public GameObject swampFloor;
@@ -154,6 +155,8 @@ public class GameWorld : MonoBehaviour
                 return stoneWall;
             case Map.Walls.stoneDoor:
                 return stoneDoor;
+            case Map.Walls.barredWall:
+                return barredWall;
         }
         return null;
     }
