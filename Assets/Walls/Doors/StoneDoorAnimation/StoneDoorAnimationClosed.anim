@@ -5,7 +5,7 @@ AnimationClip:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: StoneDoorAnimation
+  m_Name: StoneDoorAnimation 1
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -50,26 +50,8 @@ AnimationClip:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
   m_ClipBindingConstant:
-    genericBindings:
-    - serializedVersion: 2
-      path: 0
-      attribute: 0
-      script: {fileID: 0}
-      typeID: 212
-      customType: 23
-      isPPtrCurve: 1
-    pptrCurveMapping:
-    - {fileID: 21300000, guid: 4f5ec7b06ece9b143b9d4a3e13c65a6e, type: 3}
-    - {fileID: 21300000, guid: c7528bb6415db084db0cdc89dad8f271, type: 3}
-    - {fileID: 21300000, guid: cf0867175f6d338469b740b1df6545b7, type: 3}
-    - {fileID: 21300000, guid: 41e16b7cb39bf9e45acadf34092c43ec, type: 3}
-    - {fileID: 21300000, guid: e4fa2ea1ba6e1b34398420f49a69aed7, type: 3}
-    - {fileID: 21300000, guid: c4f020e71ad89eb428beb17c16c08088, type: 3}
-    - {fileID: 21300000, guid: 9df4a3d00550e4f49bd07f5e0e5d225d, type: 3}
-    - {fileID: 21300000, guid: c858113e1eacb8f46b253e8040a6371e, type: 3}
-    - {fileID: 21300000, guid: ddb2dc1330153fd46810dc46e9a4a0a4, type: 3}
-    - {fileID: 21300000, guid: 86467251ad16d3645bc4601c38537ac3, type: 3}
-    - {fileID: 21300000, guid: 4f5ec7b06ece9b143b9d4a3e13c65a6e, type: 3}
+    genericBindings: []
+    pptrCurveMapping: []
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
