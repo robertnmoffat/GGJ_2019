@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StoneDoor : Interactible
-{
+public class StoneDoor : MonoBehaviour {
 
     Animator animator;
     public MeshCollider front;
@@ -23,8 +22,10 @@ public class StoneDoor : Interactible
             if (!animator.GetBool("isOpen"))
             {
                 open();
-            } else {
-            if (animator.GetBool("isOpen"))
+            }
+            else
+            {
+                if (animator.GetBool("isOpen"))
                 {
                     close();
                 }
@@ -32,42 +33,38 @@ public class StoneDoor : Interactible
         }
     }
 
-        
 
-    public StoneDoor(int x, int y, int z)
-        : base(x, y, z)
+
+
+
+public void open()
+{
+    animator.SetTrigger("onInteract");
+    animator.SetBool("isOpen", true);
+
+}
+
+public void close()
+{
+    animator.SetTrigger("onInteract");
+    animator.SetBool("isOpen", false);
+
+}
+
+public void accessModulate()
+{
+    if (front.enabled == false)
     {
-
+        front.enabled = true;
+        back.enabled = true;
     }
-
-    public void open()
+    else
     {
-        animator.SetTrigger("onInteract");
-        animator.SetBool("isOpen", true);
-
-    }
-
-    public void close()
-    {
-        animator.SetTrigger("onInteract");
-        animator.SetBool("isOpen", false);
-
-    }
-
-    public void accessModulate()
-    {
-        if (front.enabled == false)
+        if (front.enabled == true)
         {
-            front.enabled = true;
-            back.enabled = true;
-        } else
-        {
-            if (front.enabled == true)
-            {
-                front.enabled = false;
-                back.enabled = false;
-            }
+            front.enabled = false;
+            back.enabled = false;
         }
     }
-
+}
 }
