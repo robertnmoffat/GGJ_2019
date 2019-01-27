@@ -14,10 +14,10 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 8
-  m_Fog: 0
+  m_Fog: 1
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 3
-  m_FogDensity: 0.01
+  m_FogDensity: 0.22
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
@@ -318,8 +318,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.25, y: 0.25, z: 0.25}
-  m_Center: {x: 0, y: -0.5, z: 0}
+  m_Size: {x: 0.25, y: 0.7139168, z: 0.25}
+  m_Center: {x: 0, y: -0.2680416, z: 0}
 --- !u!114 &1661364951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -442,9 +442,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 709d41d62595e9b428b09207d4fd4e77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stoneWall: {fileID: 1000010387490436, guid: 85e1572541d7a5743ac2da55e9e8bffc, type: 2}
-  dirtFloor: {fileID: 1000011719384816, guid: 4eeef27037d7ba2458c49e1f1ed6622d, type: 2}
+  stoneWall: {fileID: 1263345717494844, guid: 85e1572541d7a5743ac2da55e9e8bffc, type: 2}
+  dirtFloor: {fileID: 1134158998226746, guid: 4eeef27037d7ba2458c49e1f1ed6622d, type: 2}
   swampFloor: {fileID: 1000011970176368, guid: abfefe2cd707f0d4b909ea0355187602, type: 2}
+  stairs: {fileID: 1508681430066680, guid: ff7a88c73985e7a46802b6871b26c99c, type: 2}
   map: {fileID: 2022372379}
 --- !u!114 &2022372379
 MonoBehaviour:

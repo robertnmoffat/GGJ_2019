@@ -11,6 +11,7 @@ public class PlayerScript : MonoBehaviour {
     // Use this for initialization
     void Start () {
         playerInput.playerTransform = transform;
+        GetComponent<Rigidbody>().freezeRotation = true;
 	}
 	
 	// Update is called once per frame
