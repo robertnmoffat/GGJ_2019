@@ -9,6 +9,10 @@ public class Map : MonoBehaviour {
     public enum Floors { empty = 0, dirt = 1, swamp = 2, stairs = 3};
     public enum Walls { empty = 0, stoneBlock = 1 , stoneDoor = 2};
 
+    public Interactible[,,] interactibleMap;
+
+    public Sprite swordGraphic;
+
     //super unintuitive level layout
     int[,,] levelTiles = {
                         {   {0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
@@ -41,9 +45,9 @@ public class Map : MonoBehaviour {
                             {1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
                             {1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0 },
                             {1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0 },
-                            {1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                            {1, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
                             {1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0 },
-                            {1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                            {1, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
                             {1, 1, 0, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0 },
                             {0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0 },
                             {1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
@@ -71,36 +75,7 @@ public class Map : MonoBehaviour {
                             {1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
                             {0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }}};
 
-    int[,,] levelTiles2 = {
-                        {   {0, 0, 0, 0, 0, 0, 0, 0, 0 },
-                            {0, 0, 0, 1, 0, 0, 0, 0, 0 },
-                            {0, 0, 0, 1, 0, 0, 0, 0, 0 },
-                            {0, 0, 0, 1, 0, 0, 0, 0, 0 },
-                            {0, 0, 0, 1, 0, 0, 0, 0, 0 },
-                            {0, 0, 0, 1, 0, 0, 0, 0, 0 },
-                            {0, 0, 0, 1, 0, 0, 0, 0, 0 },
-                            {0, 1, 1, 1, 1, 1, 0, 0, 0 },
-                            {0, 0, 0, 0, 0, 0, 0, 0, 0 }},//floor
 
-                        {   {0, 0, 0, 1, 0, 0, 0, 0, 0 },
-                            {0, 0, 1, 0, 1, 0, 0, 0, 0 },
-                            {0, 0, 1, 0, 1, 0, 0, 0, 0 },
-                            {0, 0, 1, 0, 1, 0, 0, 0, 0 },
-                            {0, 0, 1, 0, 1, 0, 0, 0, 0 },
-                            {0, 0, 1, 0, 1, 0, 0, 0, 0 },
-                            {0, 1, 1, 0, 1, 1, 0, 0, 0 },
-                            {1, 1, 0, 0, 0, 1, 1, 0, 0 },
-                            {0, 1, 1, 1, 1, 1, 0, 0, 0 }},//walls
-
-                        {   {0, 0, 0, 0, 0, 0, 0, 0, 0 },
-                            {0, 0, 0, 1, 0, 0, 0, 0, 0 },
-                            {0, 0, 0, 1, 0, 0, 0, 0, 0 },
-                            {0, 0, 0, 1, 0, 0, 0, 0, 0 },
-                            {0, 0, 0, 1, 0, 0, 0, 0, 0 },
-                            {0, 0, 0, 1, 0, 0, 0, 0, 0 },
-                            {0, 0, 0, 1, 0, 0, 0, 0, 0 },
-                            {0, 1, 1, 1, 1, 1, 0, 0, 0 },
-                            {0, 0, 0, 0, 0, 0, 0, 0, 0 }}};//floor
 
     // Use this for initialization
     void Start () {
@@ -108,10 +83,38 @@ public class Map : MonoBehaviour {
         // Debug.Log(levelTiles.GetLength(1));//10 z
         // Debug.Log(levelTiles.GetLength(2));//9 x
         Debug.Log(convertMapToString());
+
+        
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    public void initializeInteractibleMap() {
+        interactibleMap = new Interactible[levelTiles.GetLength(0), levelTiles.GetLength(1) / 2, levelTiles.GetLength(2) / 2];
+        Item swordItem = new Item(1, 0, 4, swordGraphic);
+        interactibleMap[0, 4, 1] = swordItem;//yzx
+
+    }
+
+    public Interactible GetInteractible(int y, int z, int x) {
+        if (y < interactibleMap.GetLength(0) &&
+            z < interactibleMap.GetLength(1) &&
+            x < interactibleMap.GetLength(2)) {
+            return interactibleMap[y, z, x];
+        }
+        return null;
+    }
+
+    public void setInteractible(int y, int z, int x, Interactible interactible)
+    {
+        if (y < interactibleMap.GetLength(0) &&
+            z < interactibleMap.GetLength(1) &&
+            x < interactibleMap.GetLength(2))
+        {
+            interactibleMap[y, z, x] = interactible;
+        }
+    }
+
+    // Update is called once per frame
+    void Update () {
 	
 	}
 

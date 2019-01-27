@@ -20,6 +20,9 @@ public class PlayerInput : MonoBehaviour {
     private Vector3 moveDirection = Vector3.zero;
     public Transform playerTransform;
 
+    public bool interactionPressed = false;
+    public bool mouseClicked = false;
+
     public enum inputTypes
     {
         keyboard,
@@ -77,7 +80,12 @@ public class PlayerInput : MonoBehaviour {
 
             transform.localEulerAngles = new Vector3(-rotationY, transform.localEulerAngles.y, 0);
         }
-        
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            Debug.Log("Pressed primary button.");
+        }
+
 
         //----------KEYBOARD-------------
         Vector3 pos = playerTransform.position;
@@ -99,8 +107,12 @@ public class PlayerInput : MonoBehaviour {
             pos = applyMovementInDirection(direction.left, pos);
         }
 
+        if (Input.GetKey("e")) {//interaction button
+            interactionPressed = true;
+        }
 
-        playerTransform.position = pos;
+
+            playerTransform.position = pos;
     }
 
     //applies a movement based on the mouse look direction, modified by the direction passed. (to allow strafing with 'wasd')
@@ -147,5 +159,23 @@ public class PlayerInput : MonoBehaviour {
         }
         //moveDirection.y -= gravity * Time.deltaTime * collisions;
         controller.Move(moveDirection * Time.deltaTime);
+    }
+
+    public bool isInteractionPressed() {
+        return interactionPressed;
+    }
+
+    public void resetInteractionPressed() {
+        interactionPressed = false;
+    }
+
+    public bool isMouseClicked()
+    {
+        return mouseClicked;
+    }
+
+    public void resetMouseClicked()
+    {
+        mouseClicked = false;
     }
 }
