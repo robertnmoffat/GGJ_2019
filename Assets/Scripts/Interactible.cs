@@ -19,4 +19,10 @@ public class Interactible : DungeonObject {
     {
 
     }
+
+    public void interact()
+    {
+
+
+    }
 }
