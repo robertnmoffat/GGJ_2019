@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour {
+public class Item : Interactible {
 
 	// Use this for initialization
 	void Start () {
@@ -13,4 +13,10 @@ public class NewBehaviourScript : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    public Item(int x, int y, int z) 
+        : base(x, y, z)
+    {
+
+    }
 }
