@@ -43,10 +43,7 @@ public class PlayerScript : MonoBehaviour {
             interactionPressed = true;
             playerInput.resetInteractionPressed();
         }
-        if (playerInput.isMouseClicked()) {
-            BoxCollider bc = GetComponent<BoxCollider>();
-            
-
+        if (playerInput.isMouseClicked()) {        
             mouseClicked = true;
             playerInput.resetMouseClicked();
         }

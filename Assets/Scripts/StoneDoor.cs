@@ -15,6 +15,7 @@ public class StoneDoor : MonoBehaviour {
         animator = GetComponent<Animator>();
     }
 
+
     // Update is called once per frame
     void Update()
     {
@@ -34,6 +35,10 @@ public class StoneDoor : MonoBehaviour {
                     }
                 }
         }
+    }
+
+    public void setPlayer(PlayerScript player) {
+        this.player = player;
     }
 
 public void open()

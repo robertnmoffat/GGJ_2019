@@ -1,0 +1,412 @@
+Initialize engine version: 5.6.3p1 (9c92e827232b)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA Quadro K2000M (ID=0xffb)
+    Vendor:   NVIDIA
+    VRAM:     2007 MB
+    Driver:   24.21.13.9836
+Begin MonoManager ReloadAssembly
+Platform assembly: F:\Programming\GGJ_2019\PitDeath_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading F:\Programming\GGJ_2019\PitDeath_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: F:\Programming\GGJ_2019\PitDeath_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading F:\Programming\GGJ_2019\PitDeath_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: F:\Programming\GGJ_2019\PitDeath_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading F:\Programming\GGJ_2019\PitDeath_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: F:\Programming\GGJ_2019\PitDeath_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading F:\Programming\GGJ_2019\PitDeath_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+- Completed reload, in  0.213 seconds
+Platform assembly: F:\Programming\GGJ_2019\PitDeath_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: F:\Programming\GGJ_2019\PitDeath_Data\Managed\System.dll (this message is harmless)
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 1.115864 ms
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: 3458 -> priority: 1 
+  Thread -> id: 37ac -> priority: 1 
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 12.649648 ms
+
+Unloading 10 unused Assets to reduce memory usage. Loaded Objects now: 499.
+Total: 15.900627 ms (FindLiveObjects: 0.064056 ms CreateObjectMapping: 0.088122 ms MarkObjects: 0.704626 ms  DeleteObjects: 15.042404 ms)
+
+y=3
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+z=19
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+x=18
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+y:
+3
+z:
+19
+x:
+18
+
+
+0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,
+1,1,0,1,0,1,1,0,0,0,0,0,0,0,0,0,0,0,
+1,1,0,0,0,1,1,0,0,0,0,1,0,1,0,1,0,0,
+1,1,3,1,3,1,1,0,0,0,1,2,0,2,0,2,1,0,
+1,1,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,
+1,1,0,1,0,1,1,0,0,0,1,2,0,2,0,2,1,0,
+1,0,0,0,0,0,1,1,0,1,0,0,0,0,0,0,0,0,
+1,1,0,1,0,1,2,1,0,1,0,2,0,2,0,2,1,0,
+1,1,0,0,0,1,1,1,0,1,0,1,0,1,0,1,0,0,
+1,1,1,3,1,1,1,0,0,0,0,0,0,0,0,0,0,0,
+1,1,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,
+1,1,0,1,0,1,1,0,0,0,0,0,0,0,0,0,0,0,
+0,1,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,
+
+0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,
+1,1,0,1,0,1,1,0,0,0,0,0,0,0,0,0,0,0,
+1,1,0,1,0,1,1,0,0,0,0,1,0,1,0,1,0,0,
+1,0,0,1,2,1,1,0,0,0,1,0,0,0,0,0,1,0,
+1,1,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,
+1,1,0,1,0,1,1,0,0,0,1,0,0,0,0,0,1,0,
+1,1,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,
+1,1,0,0,0,1,1,1,0,1,1,0,0,0,0,0,1,0,
+0,0,0,0,0,0,1,1,0,1,0,1,0,1,0,1,0,0,
+1,1,1,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,
+1,1,0,1,0,1,1,0,0,0,0,0,0,0,0,0,0,0,
+0,1,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,
+
+0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,
+1,1,0,1,0,1,1,0,0,0,0,0,0,0,0,0,0,0,
+1,1,0,1,0,1,1,0,0,0,0,1,0,1,0,1,0,0,
+1,1,0,1,0,1,1,0,0,0,1,1,0,1,0,1,1,0,
+1,1,0,1,0,1,1,0,0,0,0,0,0,0,0,0,0,0,
+1,1,0,1,0,1,1,0,0,0,1,1,0,0,0,1,1,0,
+1,1,0,1,0,1,1,0,0,0,0,0,0,0,0,0,0,0,
+1,1,0,0,0,1,1,1,0,1,1,1,0,1,0,1,1,0,
+1,1,0,0,0,1,1,1,0,1,0,1,0,1,0,1,0,0,
+1,1,1,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,
+1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,
+1,1,0,1,0,1,1,0,0,0,0,0,0,0,0,0,0,0,
+0,1,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Item present
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Empty
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Empty
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Empty
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Empty
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Empty
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Empty
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Empty
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Empty
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Empty
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Empty
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Empty
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Empty
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Empty
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Empty
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Empty
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Empty
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Empty
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Empty
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Empty
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Empty
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Empty
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Empty
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Empty
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Empty
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Empty
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Empty
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Empty
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Empty
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Empty
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Empty
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Empty
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Empty
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Empty
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Empty
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Empty
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Empty
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Empty
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Empty
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Empty
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Empty
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Empty
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Empty
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Empty
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Empty
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Empty
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Empty
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Empty
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Empty
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Empty
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Empty
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Empty
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Empty
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Empty
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Empty
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Empty
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Empty
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Empty
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Empty
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Empty
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Empty
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Empty
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Empty
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Empty
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Empty
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Empty
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Empty
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Empty
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Empty
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Empty
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Empty
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Empty
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Empty
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Empty
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+

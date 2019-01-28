@@ -15,6 +15,7 @@ public class GameWorld : MonoBehaviour
     public Map map;
 
     public GameObject dungeonEntityPrefab;
+    public PlayerScript player;
 
     // Use this for initialization
     void Start()
@@ -120,6 +121,11 @@ public class GameWorld : MonoBehaviour
                 wall = Instantiate(wallObject, new Vector3(x / 2, y + 0.5f, (-z / 2) + 0.5f), Quaternion.Euler(0, 0, 0));
             else
                 wall = Instantiate(wallObject, new Vector3((x / 2) - 0.5f, y + 0.5f, -z / 2), Quaternion.Euler(0, 90, 0));
+
+            StoneDoor sd = wall.GetComponent<StoneDoor>();
+            if (sd != null) {
+                sd.setPlayer(player);
+            }
         }
     }
 
