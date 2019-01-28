@@ -44,8 +44,25 @@ public class PlayerScript : MonoBehaviour {
             playerInput.resetInteractionPressed();
         }
         if (playerInput.isMouseClicked()) {
+            BoxCollider bc = GetComponent<BoxCollider>();
+            
+
             mouseClicked = true;
             playerInput.resetMouseClicked();
+        }
+    }
+
+    void OnCollisionEnter(Collision col)
+    {
+        
+
+        if (col.gameObject.name == "OrangeGolblin")
+        {
+            Debug.Log("COLLISION ENTERED");
+            if (mouseClicked) {
+                col.transform.position = new Vector3(col.transform.position.x, col.transform.position.y+1, col.transform.position.z);
+            }
+            //Destroy(col.gameObject);
         }
     }
 

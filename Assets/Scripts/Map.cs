@@ -13,6 +13,8 @@ public class Map : MonoBehaviour {
 
     public Sprite swordGraphic;
 
+    public GameObject[,,] levelGameObjects;
+
     //super unintuitive level layout
     int[,,] levelTiles = {
                         {   {0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
