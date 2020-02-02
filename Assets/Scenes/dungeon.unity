@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -262,6 +262,7 @@ GameObject:
   - component: {fileID: 133500909}
   - component: {fileID: 133500911}
   - component: {fileID: 133500910}
+  - component: {fileID: 133500912}
   m_Layer: 5
   m_Name: ArmImage
   m_TagString: Untagged
@@ -324,6 +325,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 133500908}
   m_CullTransparentMesh: 0
+--- !u!95 &133500912
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 133500908}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6ae3210e2d117d24aa0bd4697f4f7c21, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &153382382
 GameObject:
   m_ObjectHideFlags: 0
@@ -1185,6 +1205,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerView: {fileID: 0}
   playerInput: {fileID: 1661364954}
+  weaponAnimations: {fileID: 133500912}
   direction: {x: 0, y: 0, z: 0}
   itemHeldChanged: 0
   interactionPressed: 0

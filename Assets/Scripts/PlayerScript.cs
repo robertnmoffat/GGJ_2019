@@ -5,6 +5,7 @@ public class PlayerScript : MonoBehaviour {
 
     public Camera playerView;
     public PlayerInput playerInput;
+    public Animator weaponAnimations;
 
     public Vector3 direction;
 
@@ -126,6 +127,7 @@ public class PlayerScript : MonoBehaviour {
     public void setHeldItem(Item newItem) {
         heldItem = newItem;
         itemHeldChanged = true;
+        weaponAnimations.SetInteger("equippedItem", (int)newItem.getItemType());
     }
 
     public bool isItemHeldChanged() {
@@ -150,5 +152,7 @@ public class PlayerScript : MonoBehaviour {
     {
         interactionPressed = false;
     }
+
+
 
 }
