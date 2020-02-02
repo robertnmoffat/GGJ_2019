@@ -467,6 +467,7 @@ GameObject:
   - component: {fileID: 625911748}
   - component: {fileID: 625911747}
   - component: {fileID: 625911746}
+  - component: {fileID: 625911749}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -502,6 +503,20 @@ Behaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 625911745}
   m_Enabled: 1
+--- !u!114 &625911749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 625911745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ca652c13353f448d9227970c0928082, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  referenceHeight: 180
+  pixelsPerUnit: 32
 --- !u!20 &625911750
 Camera:
   m_ObjectHideFlags: 0
@@ -521,15 +536,15 @@ Camera:
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
+    x: 0.001039505
+    y: 0.03687823
+    width: 0.997921
+    height: 0.92624354
   near clip plane: 0.07
   far clip plane: 1000
   field of view: 60
   orthographic: 0
-  orthographic size: 5
+  orthographic size: 2.8125
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1136,7 +1151,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1661364948}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: 0.75, z: -0.5}
+  m_LocalPosition: {x: 37, y: 0.75, z: -37}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 625911751}
@@ -1463,6 +1478,10 @@ MonoBehaviour:
   emptyItemSprite: {fileID: 21300000, guid: a625e243b14a60c4b80a5420eac23c0f, type: 3}
   player: {fileID: 1661364951}
   treasure: {fileID: 1335525453215322, guid: 99e5c30a95eab6545b7dda3942262b8b, type: 3}
+  seed: 123
+  x: 150
+  y: 150
+  z: 150
 --- !u!4 &2022372377
 Transform:
   m_ObjectHideFlags: 0

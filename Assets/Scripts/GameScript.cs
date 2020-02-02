@@ -14,14 +14,29 @@ public class GameScript : MonoBehaviour {
 
     public GameObject treasure;
 
+    public int seed = 123;
+    public int x=18;
+    public int y=3;
+    public int z=18;
+
     // Use this for initialization
     void Start () {
         itemHeldImage.sprite = emptyItemSprite;
         //gameWorld.setMap(new Map());//for now map contains hard coded info. future will be spat out of a map generator
         gameWorld.player = player;
+
+        ProcMapGenerator mapGen = new ProcMapGenerator(seed, y, z, x);
+        Map map = gameWorld.getMap();
+        map.setMapSpaces(mapGen.getMapSpaces());
+        
+        gameWorld.setMap(map);
         gameWorld.map.initializeInteractibleMap();
-        gameWorld.buildWorld();
+        //gameWorld.buildWorld();
+        gameWorld.buildWorldFromMapSpaces();
         Instantiate(treasure, new Vector3(0.69f, 1.6f, -4f), Quaternion.Euler(0, -44.66f, 0));
+
+        //ProcMapGenerator pmg = new ProcMapGenerator(123);
+
     }
 	
 	// Update is called once per frame
