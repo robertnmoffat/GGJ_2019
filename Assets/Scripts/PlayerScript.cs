@@ -44,7 +44,8 @@ public class PlayerScript : MonoBehaviour {
             interactionPressed = true;
             playerInput.resetInteractionPressed();
         }
-        if (playerInput.isMouseClicked()) {        
+        if (playerInput.isMouseClicked()) {
+            weaponAnimations.SetTrigger("attack");        
             mouseClicked = true;
             playerInput.resetMouseClicked();
         }
