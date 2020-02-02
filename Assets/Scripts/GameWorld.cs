@@ -104,19 +104,19 @@ public class GameWorld : MonoBehaviour
         {
             switch (wallOrientation) {
                 case WallOrientation.front:
-                    wall = Instantiate(wallObject, new Vector3(x, y + 0.5f, -z + 0.5f), Quaternion.Euler(0, 0, 0));
+                    wall = Instantiate(wallObject, new Vector3(x, y + 0.5f, z + 0.5f), Quaternion.Euler(0, 0, 0));
                     break;
                 case WallOrientation.back:
-                    wall = Instantiate(wallObject, new Vector3(x, y + 0.5f, -z - 0.5f), Quaternion.Euler(0, 0, 0));
+                    wall = Instantiate(wallObject, new Vector3(x, y + 0.5f, z - 0.5f), Quaternion.Euler(0, 0, 0));
                     break;
                 case WallOrientation.left:
-                    wall = Instantiate(wallObject, new Vector3(x - 0.5f, y + 0.5f, -z), Quaternion.Euler(0, 90, 0));
+                    wall = Instantiate(wallObject, new Vector3(x - 0.5f, y + 0.5f, z), Quaternion.Euler(0, 90, 0));
                     break;
                 case WallOrientation.right:
-                    wall = Instantiate(wallObject, new Vector3(x + 0.5f, y + 0.5f, -z), Quaternion.Euler(0, 90, 0));
+                    wall = Instantiate(wallObject, new Vector3(x + 0.5f, y + 0.5f, z), Quaternion.Euler(0, 90, 0));
                     break;
                 default:
-                    wall = Instantiate(wallObject, new Vector3(x, y, -z), Quaternion.Euler(0, 0, 0));
+                    wall = Instantiate(wallObject, new Vector3(x, y, z), Quaternion.Euler(0, 0, 0));
                     break;
             }
             
@@ -138,8 +138,19 @@ public class GameWorld : MonoBehaviour
 
         GameObject floorObject = getFloorObjectByType(floorType);
         GameObject floor;//if we want to utilize the floors later
-        if (floorObject!=null)
-            floor = (GameObject)Instantiate(floorObject, new Vector3(x / 2, y, -z / 2), Quaternion.Euler(0, 180, 0));
+        if (floorObject != null)
+        {
+            if(floorType==Floor.stairsEast)
+                floor = (GameObject)Instantiate(floorObject, new Vector3(x, y, z), Quaternion.Euler(0,90, 0));
+            else if(floorType==Floor.stairsNorth)
+                floor = (GameObject)Instantiate(floorObject, new Vector3(x, y, z), Quaternion.Euler(0, 0, 0));
+            else if(floorType==Floor.stairsSouth)
+                floor = (GameObject)Instantiate(floorObject, new Vector3(x, y, z), Quaternion.Euler(0, 180, 0));
+            else if(floorType==Floor.stairsWest)
+                floor = (GameObject)Instantiate(floorObject, new Vector3(x, y, z), Quaternion.Euler(0, 270, 0));
+            else
+            floor = (GameObject)Instantiate(floorObject, new Vector3(x, y, z), Quaternion.Euler(0, 180, 0));
+        }
     }
 
     //returns object matching enum of floor map integer
@@ -151,7 +162,13 @@ public class GameWorld : MonoBehaviour
                 return dirtFloor;
             case Map.Floor.swamp:
                 return swampFloor;
-            case Map.Floor.stairs:
+            case Map.Floor.stairsEast:
+                return stairs;
+            case Map.Floor.stairsNorth:
+                return stairs;
+            case Map.Floor.stairsSouth:
+                return stairs;
+            case Map.Floor.stairsWest:
                 return stairs;
         }
 

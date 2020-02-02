@@ -16,7 +16,7 @@ public class Map : MonoBehaviour {
         public Wall rightWall;
     }
 
-    public enum Floor { empty = 0, dirt = 1, swamp = 2, stairs = 3};
+    public enum Floor { empty = 0, dirt = 1, swamp = 2, stairsNorth = 3,stairsSouth, stairsWest, stairsEast, stairOpening};
     public enum Wall { empty = 0, stoneBlock = 1 , stoneDoor = 2, barredWall = 3};
 
     public Interactible[,,] interactibleMap;

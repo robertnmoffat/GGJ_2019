@@ -16,7 +16,7 @@ public class GameScript : MonoBehaviour {
 
     public int seed = 123;
     public int x=18;
-    public int y=3;
+    public int y=20;
     public int z=18;
 
     // Use this for initialization
@@ -28,6 +28,9 @@ public class GameScript : MonoBehaviour {
         ProcMapGenerator mapGen = new ProcMapGenerator(seed, y, z, x);
         Map map = gameWorld.getMap();
         map.setMapSpaces(mapGen.getMapSpaces());
+
+        Vector3 startpos = mapGen.getStartPos();
+        player.transform.position = new Vector3(startpos.x, startpos.y+1, startpos.z);
         
         gameWorld.setMap(map);
         gameWorld.map.initializeInteractibleMap();
