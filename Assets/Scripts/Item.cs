@@ -3,15 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Item : Interactible {
+
+        public enum ItemType {
+        none,
+        sword
+        };
+
     public Sprite itemGraphic;
     public SpriteRenderer spriteRenderer;
+    public ItemType itemType;
 
-    
-
-    public Item(int x, int y, int z, Sprite itemGraphic)
+    public Item(int x, int y, int z, Sprite itemGraphic, ItemType itemType)
         : base(x, y, z)
     {
         this.itemGraphic = itemGraphic;
+        this.itemType = itemType;
     }
 
     public Sprite getItemGraphic() {
@@ -36,5 +42,9 @@ public class Item : Interactible {
             gameObjectScript.removeSelf();
             gameObjectScript = null;
         }
+    }
+
+    public ItemType getItemType() {
+        return itemType;
     }
 }

@@ -4,6 +4,7 @@ using System.Text;
 using System.IO;
 using System.Text.RegularExpressions;
 using System.Globalization;
+using static Item;
 
 public class Map : MonoBehaviour {
     public enum Floors { empty = 0, dirt = 1, swamp = 2, stairs = 3};
@@ -91,7 +92,7 @@ public class Map : MonoBehaviour {
 
     public void initializeInteractibleMap() {
         interactibleMap = new Interactible[levelTiles.GetLength(0), levelTiles.GetLength(1) / 2, levelTiles.GetLength(2) / 2];
-        Item swordItem = new Item(1, 0, 4, swordGraphic);
+        Item swordItem = new Item(1, 0, 4, swordGraphic, ItemType.sword);
         interactibleMap[0, 4, 1] = swordItem;//yzx
 
     }
