@@ -125,13 +125,20 @@ public class Map : MonoBehaviour {
     }
 
     public void initializeInteractibleMap() {
-        interactibleMap = new Interactible[levelTiles.GetLength(0), levelTiles.GetLength(1) / 2, levelTiles.GetLength(2) / 2];
-        Item swordItem = new Item(1, 0, 4, swordGraphic, ItemType.sword);
-        interactibleMap[0, 4, 1] = swordItem;//yzx
-
+        interactibleMap = new Interactible[levelTiles.GetLength(0), levelTiles.GetLength(1), levelTiles.GetLength(2)];
+        Item swordItem = new Item(levelTiles.GetLength(0)/2, 0, levelTiles.GetLength(2)/2, swordGraphic, ItemType.sword);
+        //interactibleMap[0, 4, 1] = swordItem;//yzx
+        interactibleMap[levelTiles.GetLength(0)/2, 0, levelTiles.GetLength(2)/2] = swordItem;
     }
 
-    public Interactible GetInteractible(int y, int z, int x) {
+    public Interactible GetInteractible(Vector3 position) {
+        if (!WithinBoundsOfInteractableMap(position))
+            return null;
+
+        int y = (int)position.y;
+        int z = (int)position.z;
+        int x = (int)position.x;
+
         if (y < interactibleMap.GetLength(0) &&
             z < interactibleMap.GetLength(1) &&
             x < interactibleMap.GetLength(2)) {
@@ -140,8 +147,15 @@ public class Map : MonoBehaviour {
         return null;
     }
 
-    public void setInteractible(int y, int z, int x, Interactible interactible)
+    public void setInteractible(Vector3 position, Interactible interactible)
     {
+        if (!WithinBoundsOfInteractableMap(position))
+            return;
+
+        int y = (int)position.y;
+        int z = (int)position.z;
+        int x = (int)position.x;
+
         if (y < interactibleMap.GetLength(0) &&
             z < interactibleMap.GetLength(1) &&
             x < interactibleMap.GetLength(2))
@@ -149,6 +163,16 @@ public class Map : MonoBehaviour {
             interactibleMap[y, z, x] = interactible;
         }
     }
+
+    public bool WithinBoundsOfInteractableMap(Vector3 position) {
+        int x = (int)position.x;
+        int y = (int)position.y;
+        int z = (int)position.z;
+
+        return (y < interactibleMap.GetLength(0) &&
+            z < interactibleMap.GetLength(1) &&
+            x < interactibleMap.GetLength(2));
+        }
 
     // Update is called once per frame
     void Update () {

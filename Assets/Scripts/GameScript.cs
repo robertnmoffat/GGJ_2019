@@ -14,13 +14,15 @@ public class GameScript : MonoBehaviour {
 
     public GameObject treasure;
 
-    public int seed = 123;
+    public int seed = 32123121;
     public int x=18;
     public int y=20;
     public int z=18;
 
     // Use this for initialization
     void Start () {
+        seed = System.DateTime.Now.Millisecond;
+
         itemHeldImage.sprite = emptyItemSprite;
         //gameWorld.setMap(new Map());//for now map contains hard coded info. future will be spat out of a map generator
         gameWorld.player = player;
@@ -57,13 +59,13 @@ public class GameScript : MonoBehaviour {
             int x = player.blockx;
             int z = player.blockz;
             int y = player.blocky;
-            if ((curInteractible = map.GetInteractible(y, -1*z, x)) != null)
+            if ((curInteractible = map.GetInteractible(new Vector3(x,y,z))) != null)
             {
                 if (curInteractible is Item) {
                     Item curItem = (Item)curInteractible;
                     curItem.removeGameObject();
                     player.setHeldItem(curItem);
-                    map.setInteractible(y, -1 * z, x, null);
+                    map.setInteractible(new Vector3(x, y, z), null);
                 }
                 Debug.Log("Item present");
             }

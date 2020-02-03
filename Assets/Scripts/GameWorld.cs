@@ -6,9 +6,16 @@ public class GameWorld : MonoBehaviour
 {
     public enum WallOrientation { front, back, left, right };
 
+    public GameObject goblinPrefab;
+
     public GameObject stoneWall;
     public GameObject stoneDoor;
     public GameObject barredWall;
+
+    public GameObject paintingObj;
+    public GameObject paintingObj2;
+
+    public GameObject goblinObj;
 
     public GameObject dirtFloor;
     public GameObject swampFloor;
@@ -47,8 +54,8 @@ public class GameWorld : MonoBehaviour
             {
                 for (int x = 0; x < map.getXLength(); x++)
                 {
-                    Interactible curInteractible;
-                    if ((curInteractible = map.GetInteractible(y, z / 2, x / 2)) != null && curInteractible.gameObjectScript == null)
+                    Interactible curInteractible = map.GetInteractible(new Vector3(x, y, z));
+                    if (curInteractible != null && curInteractible.gameObjectScript == null)
                     {
                         instantiateInteractible(curInteractible, new Vector3(x,y,z));
                     }
@@ -75,7 +82,7 @@ public class GameWorld : MonoBehaviour
         {
             //Interactible is of the item class
             Item curItem = (Item)interactible;
-            GameObject itemObject = Instantiate(dungeonEntityPrefab, new Vector3(x / 2, y + 0.5f, (-z / 2) - 1), Quaternion.Euler(0, 0, 0));
+            GameObject itemObject = Instantiate(dungeonEntityPrefab, new Vector3(x, y + 0.5f, (z) - 1), Quaternion.Euler(0, 0, 0));
             DungeonEntity newDungeonEntity = itemObject.GetComponent<DungeonEntity>();
             curItem.gameObjectScript = newDungeonEntity;
             curItem.initGameObject();
@@ -98,22 +105,40 @@ public class GameWorld : MonoBehaviour
         int y = (int)position.y;
         int z = (int)position.z;
 
+        float pictureSpawnChance = 0.01f;
+
         GameObject wallObject = getWallObjectByType(wallType);
         GameObject wall;
+
+        GameObject curPainting;
+        if ((int)(Random.value * 2) == 1)
+            curPainting = paintingObj;
+        else
+            curPainting = paintingObj2;
+
+
         if (wallObject != null)
         {
             switch (wallOrientation) {
                 case WallOrientation.front:
                     wall = Instantiate(wallObject, new Vector3(x, y + 0.5f, z + 0.5f), Quaternion.Euler(0, 0, 0));
+                    if(Random.value<pictureSpawnChance)
+                    Instantiate(curPainting, new Vector3(x, y, z), Quaternion.Euler(0, 0, 0));
                     break;
                 case WallOrientation.back:
                     wall = Instantiate(wallObject, new Vector3(x, y + 0.5f, z - 0.5f), Quaternion.Euler(0, 0, 0));
+                    if (Random.value < pictureSpawnChance)
+                        Instantiate(curPainting, new Vector3(x, y, z), Quaternion.Euler(0, 180, 0));
                     break;
                 case WallOrientation.left:
                     wall = Instantiate(wallObject, new Vector3(x - 0.5f, y + 0.5f, z), Quaternion.Euler(0, 90, 0));
+                    if (Random.value < pictureSpawnChance)
+                        Instantiate(curPainting, new Vector3(x, y, z), Quaternion.Euler(0, -90, 0));
                     break;
                 case WallOrientation.right:
                     wall = Instantiate(wallObject, new Vector3(x + 0.5f, y + 0.5f, z), Quaternion.Euler(0, 90, 0));
+                    if (Random.value < pictureSpawnChance)
+                        Instantiate(curPainting, new Vector3(x, y, z), Quaternion.Euler(0, 90, 0));
                     break;
                 default:
                     wall = Instantiate(wallObject, new Vector3(x, y, z), Quaternion.Euler(0, 0, 0));
@@ -135,6 +160,11 @@ public class GameWorld : MonoBehaviour
         int x = (int)position.x;
         int y = (int)position.y;
         int z = (int)position.z;
+
+        float goblinChance = 0.01f;
+
+        if(Random.value<goblinChance)
+            Instantiate(goblinObj, new Vector3(x, y, z), Quaternion.Euler(0, 0, 0));
 
         GameObject floorObject = getFloorObjectByType(floorType);
         GameObject floor;//if we want to utilize the floors later

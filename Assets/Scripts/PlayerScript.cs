@@ -24,6 +24,8 @@ public class PlayerScript : MonoBehaviour {
 
     public int blockx, blockz, blocky;
 
+    public float playerSpeed = 0.75f;
+
 
     // Use this for initialization
     void Start () {
@@ -33,11 +35,12 @@ public class PlayerScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
         playerInput.handlePlayerMovement();
         direction = transform.eulerAngles;
 
-        blockx = (int)(transform.position.x+0.5f);
-        blockz = (int)(transform.position.z+0.5f);
+        blockx = (int)(transform.position.x+playerSpeed);
+        blockz = (int)(transform.position.z+ playerSpeed);
         blocky = (int)transform.position.y;
 
         if (playerInput.isInteractionPressed()) {
